@@ -42,16 +42,6 @@ Think of it like this:
 - **Scrum**: work happens in fixed sprints, with defined roles (Product Owner, Scrum Master, Dev Team) and ceremonies (planning, standup, review, retro).
 - **Kanban**: continuous flow, no fixed sprints. Work items move across a board: `To Do → In Progress → Review → Done`. Focus is on limiting how much work is "in progress" at once.
 
-### Hands-on (no tools needed, just practice thinking in Agile terms)
-- [ ] Write 3 user stories for a feature you're currently building on the HR AI Toolkit, in the format: *"As a [role], I want [feature], so that [benefit]"*
-- [ ] Look at your team's task board (Jira/Trello/GitLab boards) and identify: current sprint, backlog, in-progress items
-- [ ] Note down what a standup update from you would sound like today (yesterday/today/blockers)
-
-### Where it connects to what you already do
-Your recent MR for "Step 13 (Orientation and Induction)" and phased onboarding work is a great real example — each "Step" of onboarding automation is essentially a **user story** being delivered incrementally, sprint by sprint, rather than one giant onboarding-system release.
-
----
-
 ## 2. Microservices vs Monolithic Architecture
 
 ### Monolithic — the basic idea
@@ -124,11 +114,6 @@ the network (usually via REST APIs or message queues).
 ### Where this connects to your work
 The **AAF (Agentic Assembly Framework)** setup you work with, where the HR AI Toolkit has separate backend endpoints, tool wrappers, a gateway (`localhost:9002/execute`), and a frontend — is architected in a microservices-influenced style: distinct pieces talking over an API gateway rather than one monolith doing everything.
 
-### Hands-on
-- [ ] Diagram (on paper or draw.io) how the HR AI Toolkit's pieces (gateway, backend endpoints, frontend, state/DB) map onto the monolith vs microservices picture above
-- [ ] Note one real trade-off you've personally hit in this project that matches a pro/con from the table above
-
----
 
 ## 3. Linux Administration — Full Curriculum
 
@@ -167,11 +152,6 @@ chown newuser:newgroup file.txt      # change owner and group
 chown -R user:group folder/           # recursive
 ```
 
-**Hands-on:**
-- [ ] Create a script, make it non-executable, try to run it (should fail), then `chmod +x` and run it
-- [ ] Create a file, change its owner and group, verify with `ls -l`
-
----
 
 ### 3.2 Files and Directories
 
@@ -197,11 +177,6 @@ tail -n 10 file.txt                      # last 10 lines
 ln -s target linkname                     # create a symbolic link
 ```
 
-**Hands-on:**
-- [ ] Create a nested directory structure with `mkdir -p`, populate it with files, then remove it with `rm -r`
-
----
-
 ### 3.3 Searching
 
 ```bash
@@ -220,12 +195,6 @@ locate filename                                  # fast search using a pre-built
 which python3                                      # find path of an executable
 whereis git                                          # find binary/source/man locations
 ```
-
-**Hands-on:**
-- [ ] Search your project folder for all `.py` files modified today
-- [ ] `grep` for a specific function name across your project directory
-
----
 
 ### 3.4 Text Processing
 
@@ -248,11 +217,6 @@ tr 'a-z' 'A-Z' < file.txt                       # translate/transform characters
 diff file1.txt file2.txt                         # compare two files
 ```
 
-**Hands-on:**
-- [ ] Take a log file, use `grep` to filter error lines, then `wc -l` to count them
-- [ ] Use `sed` to replace a word across a test file
-
----
 
 ### 3.5 Processes
 
@@ -275,11 +239,6 @@ nohup command &                             # run command immune to hangups (sur
 systemctl status servicename                  # check status of a systemd service
 ```
 
-**Hands-on:**
-- [ ] Start a long-running command (e.g. `sleep 300 &`), find its PID with `ps aux`, then kill it
-- [ ] Practice `top`/`htop` to identify which process is using the most CPU/memory
-
----
 
 ### 3.6 Package Management
 
@@ -308,12 +267,6 @@ pip list
 pip uninstall packagename
 ```
 
-**Hands-on:**
-- [ ] Install a small utility (e.g. `tree` or `htop`) via `apt`
-- [ ] Check installed version with `apt list --installed | grep <name>`
-
----
-
 ### 3.7 Services
 
 Most modern Linux systems use **systemd** to manage services (background
@@ -330,11 +283,6 @@ journalctl -u servicename                    # view service logs
 journalctl -u servicename -f                  # follow logs live
 ```
 
-**Hands-on:**
-- [ ] Check the status of `ssh` or `docker`/`podman` service on your machine
-- [ ] Stop and restart a service, confirm with `systemctl status`
-
----
 
 ### 3.8 Archives (Compression)
 
@@ -351,11 +299,6 @@ unzip archive.zip                                    # extract zip
 gzip file.txt                                          # compress a single file (-> file.txt.gz)
 gunzip file.txt.gz                                       # decompress
 ```
-
-**Hands-on:**
-- [ ] Archive a project folder into `.tar.gz`, then extract it into a new location to confirm it worked
-
----
 
 ### 3.9 Networking
 
@@ -379,11 +322,6 @@ hostname                                                    # show this machine'
 hostname -I                                                   # show IP address(es)
 ```
 
-**Hands-on:**
-- [ ] `ping` and `curl -I` a public site to confirm connectivity
-- [ ] `ssh` into the training Linux VM using PuTTY/terminal, and `scp` a test file to/from it
-
----
 
 ### 3.10 System Information
 
@@ -401,34 +339,14 @@ whoami                                          # current logged-in user
 id                                                # current user's UID/GID and groups
 ```
 
-**Hands-on:**
-- [ ] Check disk usage (`df -h`) and memory usage (`free -h`) on your training VM
-- [ ] Identify your distro (`cat /etc/os-release`) and CPU info (`lscpu`)
+<img width="919" height="912" alt="Screenshot 2026-08-23 150736" src="https://github.com/user-attachments/assets/78867bae-fb6e-4022-a13d-8004df155070" />
+<img width="944" height="828" alt="Screenshot 2026-08-23 151323" src="https://github.com/user-attachments/assets/fc819ea0-d6f7-4771-8a8d-7531f903c7b4" />
+<img width="1633" height="694" alt="Screenshot 2026-08-23 151648" src="https://github.com/user-attachments/assets/6877723b-23be-4eea-84ed-b45ad8349284" />
+<img width="1575" height="923" alt="Screenshot 2026-08-23 152054" src="https://github.com/user-attachments/assets/1ec3ce07-939b-438e-9ea4-041ff1d3701f" />
+<img width="1880" height="909" alt="Screenshot 2026-08-23 152222" src="https://github.com/user-attachments/assets/5893e48f-e308-4ca2-b2ee-bfa0b0d6044f" />
 
----
 
-## 4. Pushing This to GitHub
+      
 
-Once you've worked through the checkboxes above, push your notes + any
-scripts/screenshots as evidence of hands-on practice.
 
-```bash
-# one-time setup in your project folder
-git init
-git add README.md
-git commit -m "Add DevOps training notes: Agile, Microservices, Linux"
 
-# connect to your GitHub repo (create the repo on github.com first)
-git remote add origin https://github.com/<your-username>/<repo-name>.git
-git branch -M main
-git push -u origin main
-
-# for future updates as you complete more hands-on tasks
-git add .
-git commit -m "Add hands-on notes for Linux networking section"
-git push
-```
-
-**Tip:** as you complete each hands-on checkbox above, tick it off `[x]`
-and commit — this gives you a clean commit history showing incremental
-progress, which is a good habit to demo to your team lead directly.
