@@ -111,16 +111,7 @@ the network (usually via REST APIs or message queues).
 | Team structure | Works fine for small teams | Suited to multiple independent teams |
 | Good for | Startups, small apps, MVPs | Large, complex, evolving systems |
 
-### Where this connects to your work
-The **AAF (Agentic Assembly Framework)** setup you work with, where the HR AI Toolkit has separate backend endpoints, tool wrappers, a gateway (`localhost:9002/execute`), and a frontend — is architected in a microservices-influenced style: distinct pieces talking over an API gateway rather than one monolith doing everything.
-
-
 ## 3. Linux Administration — Full Curriculum
-
-Practice every command below yourself in a real Linux environment
-(WSL, VM, or cloud instance) via PuTTY/SSH. Reading isn't enough —
-type them, break things, fix them.
-
 ### 3.1 Permissions
 
 Every file has an **owner**, a **group**, and **permission bits** for
