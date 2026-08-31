@@ -1,0 +1,6 @@
+{
+    "application": "inventory-service",
+    "environment": "development",
+    "port": 8080,
+    "debug": true
+}

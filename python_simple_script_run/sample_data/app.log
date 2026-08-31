@@ -1,0 +1,7 @@
+INFO Application started
+INFO User logged in
+WARNING Disk usage is high
+INFO Backup completed
+ERROR Database connection failed
+INFO User logged out
+ERROR Service unavailable
