@@ -333,10 +333,3 @@ print("Script finished.")
 
 ---
 
-## Pushing to GitHub
-
-```bash
-git add python_scripts/
-git commit -m "Add python concepts and 5 hands-on python scripts"
-git push
-```
