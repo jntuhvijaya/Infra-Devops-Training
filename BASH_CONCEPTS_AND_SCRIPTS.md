@@ -339,10 +339,3 @@ echo "Script finished."
 
 ---
 
-## Pushing to GitHub
-
-```bash
-git add bash_scripts/
-git commit -m "Add bash concepts and 5 hands-on bash scripts"
-git push
-```
