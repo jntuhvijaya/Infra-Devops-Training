@@ -284,11 +284,3 @@ Linux philosophy: each tool does ONE thing well, and you combine them.
 
 ---
 
-## Hands-on checklist for this guide
-
-- [ ] Run `python3 05_ip_subnet_checker.py <your-machine's-IP>` and identify if it's private or public
-- [ ] Run `python3 05_ip_subnet_checker.py 192.168.1.0/26` and manually verify the usable host count against the CIDR table above
-- [ ] Run `bash 05_network_check.sh` and identify which step (DNS, ping, HTTP) corresponds to which part of "PART 1" above
-- [ ] Run `ss -tulnp` and identify at least one port and what service is using it
-- [ ] Create a small CSV file and practice one `cut`, one `sed`, and one `awk` command on it
-- [ ] Chain a `grep | awk | sort | uniq -c` pipeline on any log file you have
