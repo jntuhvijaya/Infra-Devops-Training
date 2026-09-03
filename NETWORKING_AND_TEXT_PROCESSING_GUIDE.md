@@ -37,7 +37,7 @@ IPv4 address is 32 bits total.
 | `172.16.0.0 – 172.31.255.255` | `172.16.5.4` |
 | `192.168.0.0 – 192.168.255.255` | `192.168.1.10` |
 
-Check this yourself: `python3 05_ip_subnet_checker.py 192.168.1.10` (from the scripts folder) tells you instantly if an IP is private/public/loopback.
+ `python3 05_ip_subnet_checker.py 192.168.1.10` (from the scripts folder) tells you instantly if an IP is private/public/loopback.
 
 **Special addresses:**
 - `127.0.0.1` — **loopback**, always means "this same machine" (aka `localhost`)
@@ -78,7 +78,6 @@ smaller, isolated segments (e.g. separate the "servers" network from the
 *(Usable hosts = total minus 2, because the first address is reserved for
 the network itself and the last is the broadcast address.)*
 
-**Try it hands-on:**
 ```bash
 python3 05_ip_subnet_checker.py 192.168.1.0/24
 python3 05_ip_subnet_checker.py 192.168.1.0/28
@@ -105,7 +104,7 @@ actually use to route traffic.
 | `TXT` | Arbitrary text, often used for verification/security records |
 | `NS` | Which DNS servers are authoritative for this domain |
 
-**Commands to try:**
+**Commands:**
 ```bash
 nslookup google.com          # basic DNS lookup
 dig google.com                 # more detailed DNS lookup (if installed)
@@ -113,7 +112,7 @@ getent hosts google.com          # uses the system's own resolver
 cat /etc/resolv.conf               # shows which DNS servers your machine uses
 ```
 
-**Hands-on:** run `bash 05_network_check.sh google.com` from the bash
+**commands** run `bash 05_network_check.sh google.com` from the bash
 scripts folder — it does a DNS lookup, ping, and HTTP check all in one go.
 
 ---
@@ -201,7 +200,7 @@ cut -d',' -f2-3 data.csv            # a range of fields -> "age" and "city"
 cut -c1-5 file.txt                    # extract characters 1 to 5 of each line
 ```
 
-**Try it:**
+
 ```bash
 echo "vijaya,25,hyderabad" | cut -d',' -f1
 # Output: vijaya
@@ -224,7 +223,7 @@ sed '3d' file.txt                                 # delete line 3
 sed '/pattern/d' file.txt                           # delete any line matching "pattern"
 ```
 
-**Try it:**
+
 ```bash
 echo "hello world" | sed 's/world/linux/'
 # Output: hello linux
@@ -248,7 +247,7 @@ awk '$3 > 100 {print $0}' data.txt               # print lines WHERE column 3 is
 awk '{sum += $2} END {print sum}' data.txt         # sum up column 2 across all lines
 ```
 
-**Try it:**
+
 ```bash
 echo "vijaya 25 hyderabad" | awk '{print $1, $3}'
 # Output: vijaya hyderabad
