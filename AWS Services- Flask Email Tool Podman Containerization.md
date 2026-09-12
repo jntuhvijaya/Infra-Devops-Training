@@ -15,8 +15,6 @@ POST /send-email HTTP/1.1 → 200
 
 `200` means the request was successfully processed.
 
-The `favicon.ico → 404` was not a major issue. It only means the browser requested a favicon and the application did not have one.
-
 ---
 
 ## 2. Podman Setup
@@ -107,6 +105,8 @@ CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
 
 ### COPY
 
+<img width="1507" height="882" alt="image" src="https://github.com/user-attachments/assets/61d12629-218e-485e-a28c-55b1f39dcbca" />
+
 ```dockerfile
 COPY . ./
 ```
@@ -142,34 +142,6 @@ __pycache__/
 ```
 
 ---
-
-## 5. Gunicorn Error
-
-Initially, when we tried:
-
-```powershell
-podman run -d -p 5000:5000 --name emailtool test_emailtool
-```
-
-we received:
-
-```text
-crun: executable file `gunicorn` not found in $PATH
-```
-
-### Reason
-
-The Dockerfile was trying to start the application using:
-
-```dockerfile
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
-```
-
-but `gunicorn` was not installed inside the container.
-
-### Solution
-
-We added:
 
 ```text
 gunicorn
@@ -465,4 +437,7 @@ Flask Email Application
 8. **Container Logs** – used to troubleshoot application/container issues.
 9. **Podman Machine** – Linux environment used by Podman on Windows.
 10. **`podman build` vs `podman run`** – build creates the image; run creates and starts a container from that image.
+<img width="1558" height="697" alt="image" src="https://github.com/user-attachments/assets/f7cecf3f-3d10-4ef9-941e-e14ca00d6f15" />
+<img width="1562" height="837" alt="image" src="https://github.com/user-attachments/assets/b7d87f0b-3b60-4e9b-a96b-ca540a750960" />
+
 
