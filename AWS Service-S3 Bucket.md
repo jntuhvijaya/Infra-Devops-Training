@@ -644,5 +644,6 @@ If the bucket contains objects, you generally need to remove the objects first.
 ---
 <img width="1847" height="711" alt="Screenshot 2026-09-16 140337" src="https://github.com/user-attachments/assets/7320e532-6a17-4fbf-a382-418226ab6251" />
 <img width="1497" height="657" alt="Screenshot 2026-09-16 140350" src="https://github.com/user-attachments/assets/b5501ef9-6f75-47f4-a76a-c5a3e04bc5b1" />
+<img width="1835" height="822" alt="image" src="https://github.com/user-attachments/assets/79635f3c-8d1c-4499-87ac-b1e844dc4266" />
 
 
