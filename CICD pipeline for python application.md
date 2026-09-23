@@ -3499,6 +3499,8 @@ Branch:
 ```text
 master
 ```
+<img width="1905" height="788" alt="Screenshot 2026-09-23 165705" src="https://github.com/user-attachments/assets/b0d13467-71c0-4242-be07-84cd03d76b14" />
+
 
 ### Environment
 
@@ -4798,3 +4800,7 @@ Application test    ✅
 ```
 
 This is a solid set of notes to put into your **DevOps learning GitHub repository**. 
+<img width="1905" height="788" alt="Screenshot 2026-09-23 165705" src="https://github.com/user-attachments/assets/dd2ebb1b-1484-4b5f-b909-5fe5d639ba54" />
+<img width="1905" height="788" alt="Screenshot 2026-09-23 165705" src="https://github.com/user-attachments/assets/5fca4508-4227-4788-bb20-2c599561ba73" />
+
+
