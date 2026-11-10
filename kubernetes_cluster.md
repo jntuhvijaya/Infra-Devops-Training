@@ -1,8 +1,8 @@
-I have successfully created your first Kubernetes cluster and deployed your first Pod!
+I have successfully created my first Kubernetes cluster and deployed my first Pod!
 
-## 1. Your Kubernetes cluster is running
+## 1. Kubernetes cluster is running
 
-You executed:
+executed:
 
 ```
 kubectl get nodes
@@ -24,9 +24,9 @@ What this means:
 
 Kubernetes cluster running
 
-## 2. You created your first Pod
+## 2. created the first Pod
 
-You executed:
+executed:
 
 ```
 kubectl create -f pod.yml
@@ -58,9 +58,9 @@ This means:
 - `Running` means the Pod is running successfully.
 - `0` restarts means the container hasn't restarted.
 
-## 3. You verified the Nginx container
+## 3. verified the Nginx container
 
-You executed:
+executed:
 
 ```
 kubectl get pods -o wide
@@ -73,9 +73,9 @@ NAME    READY   STATUS    IP
 nginx   1/1     Running   10.244.0.3
 ```
 
-Your Pod received the IP address `10.244.0.3`.
+Pod received the IP address `10.244.0.3`.
 
-Then you entered the Minikube node:
+Then entered the Minikube node:
 
 ```
 minikube ssh
@@ -89,19 +89,19 @@ curl 10.244.0.3
 
 Successful response
 
-You received:
+received:
 
 ```
 <h1>Welcome to nginx!</h1>
 ```
 
-This proves that your Nginx web server is running and responding to requests inside your Kubernetes cluster.
+This proves that Nginx web server is running and responding to requests inside the Kubernetes cluster.
 
-## 4. Understand what you have built
+## 4. Understand what I have built
 
-Here is the architecture of your current setup:
+Here is the architecture of the current setup:
 
-Your Windows Laptop
+Windows Laptop
 
 WSL Ubuntu + kubectl
 
@@ -121,26 +121,13 @@ Welcome to nginx!
 
 HTTP response received successfully
 
-## 5. What should you learn next?
-
-Now we will learn the next important Kubernetes concept: Service.
-
-A Pod has its own IP address, but Pods can be recreated and their IP addresses can change. Kubernetes Services provide a stable way to access Pods.
-
-Our next practical exercise will be:
-
-1. Create a Kubernetes Service.
-2. Connect the Service to your Nginx Pod.
-3. Access Nginx through the Service.
-4. Learn the difference between ClusterIP, NodePort and LoadBalancer.
-
 First, exit the Minikube SSH session:
 
 ```
 exit
 ```
 
-You will return to your Ubuntu terminal.
+ will return to your Ubuntu terminal.
 
 Then execute:
 
