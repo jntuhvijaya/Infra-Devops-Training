@@ -162,6 +162,11 @@ minikube service nginx --url
 
 This will give you a URL to access your Nginx application.
 
-One small tip: Your earlier `[1]+ Stopped vi pod.yml` message means you suspended the editor, usually by pressing `Ctrl+Z`. You can return to it using `fg`, or use `nano pod.yml` for easier editing.
+<img width="1905" height="950" alt="Screenshot 2026-11-10 144506" src="https://github.com/user-attachments/assets/33257ecf-ea34-4b02-8268-ec0c68c971c5" />
+<img width="1841" height="887" alt="Screenshot 2026-11-10 150005" src="https://github.com/user-attachments/assets/0a2723e7-a378-4233-b25e-84fc41662d19" />
+<img width="1915" height="600" alt="Screenshot 2026-11-10 145425" src="https://github.com/user-attachments/assets/a1f04144-f41d-451f-9cbb-19ce39ba363c" />
 
-You're making excellent progress. You've gone from installing Kubernetes tools to running a real application inside a Kubernetes cluster!
+
+
+
+
