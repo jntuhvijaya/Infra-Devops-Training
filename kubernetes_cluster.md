@@ -153,6 +153,8 @@ This will give you a URL to access your Nginx application.
 <img width="1841" height="887" alt="Screenshot 2026-11-10 150005" src="https://github.com/user-attachments/assets/0a2723e7-a378-4233-b25e-84fc41662d19" />
 <img width="1795" height="976" alt="image" src="https://github.com/user-attachments/assets/7e07e1ad-a706-464b-b29c-0cb4cc3f7431" />
 <img width="1915" height="600" alt="Screenshot 2026-11-10 145425" src="https://github.com/user-attachments/assets/a1f04144-f41d-451f-9cbb-19ce39ba363c" />
+<img width="1658" height="813" alt="image" src="https://github.com/user-attachments/assets/8f75758b-5bf1-4541-8f8c-20b15f0e2f9a" />
+
 
 
 
