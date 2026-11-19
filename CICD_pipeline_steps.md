@@ -1,57 +1,3 @@
-
-Previewing AWS_CONSOLE_EXACT_STEPS.md
-# AWS Console — Exact Click-by-Click Steps
-## STEP 6 — Verify the app is actually running
-
-### On the EC2 instance itself
-1. Go to **EC2** → **Instances**, select your instance, click **Connect** → **EC2 Instance Connect** → **Connect**
-2. In the terminal that opens, run:
-   ```
-   sudo systemctl status flask-cicd-demo.service
-   ```
-3. Confirm it shows **Active: active (running)**
-4. Run:
-   ```
-   curl http://localhost:8000
-   curl http://localhost:8000/quote
-   curl http://localhost:8000/time
-   ```
-5. Confirm each returns real text, not an error
-
-### From your own browser
-1. Go to **EC2** → **Instances**, click on your instance
-2. In the details panel below, find and copy **Public IPv4 address**
-3. Open a new browser tab and go to:
-   ```
-   http://<public-ip>:8000
-   http://<public-ip>:8000/quote
-   http://<public-ip>:8000/time
-   ```
-4. Confirm each loads correctly
-
-If the browser test fails but the `curl localhost` test on the
-instance worked, go back to **EC2 → Security Groups**, open
-`flask-cicd-demo-sg`, click **Edit inbound rules**, and confirm the
-port 8000 rule exists with source `0.0.0.0/0`.
-
----
-
-## STEP 7 — Prove the automation works end-to-end
-
-1. On your own computer, edit `app.py` — change the text returned by the `/` route
-2. Run in your terminal:
-   ```
-   git add app.py
-   git commit -m "Update home route message"
-   git push origin master
-   ```
-3. Go back to the **CodePipeline** console, open `flask-cicd-demo-pipeline`
-4. Within a few seconds to a couple minutes, you should see it automatically start a new run (no button click needed — this is the "Change detection" from Step 4)
-5. Watch Source → Build → Deploy all turn green again
-6. Refresh `http://<public-ip>:8000` in your browser — it should show your updated text
-
-That confirms the full CI/CD loop: push code → pipeline detects it → builds → deploys → live app updates, with zero manual steps after the initial setup.
-
 AWS Console — Exact Click-by-Click Steps
 This is the pure "where do I click" guide — no code here (that's in CICD_COMPLETE_WALKTHROUGH.md and the flask-cicd-demo/ files). Follow this in order, in the AWS Console, after you've already pushed flask-cicd-demo to GitHub.
 
@@ -272,4 +218,3 @@ Within a few seconds to a couple minutes, you should see it automatically start 
 Watch Source → Build → Deploy all turn green again
 Refresh http://<public-ip>:8000 in your browser — it should show your updated text
 That confirms the full CI/CD loop: push code → pipeline detects it → builds → deploys → live app updates, with zero manual steps after the initial setup.
-
