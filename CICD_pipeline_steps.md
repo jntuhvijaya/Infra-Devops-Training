@@ -1,3 +1,68 @@
+
+Previewing AWS_CONSOLE_EXACT_STEPS.md
+# AWS Console — Exact Click-by-Click Steps
+
+This is the pure "where do I click" guide — no code here (that's in
+`CICD_COMPLETE_WALKTHROUGH.md` and the `flask-cicd-demo/` files).
+Follow this in order, in the AWS Console, after you've already
+pushed `flask-cicd-demo` to GitHub.
+
+---
+
+## STEP 1 — Launch the EC2 instance
+
+1. In the AWS Console search bar (top), type **EC2** and click it
+2. On the EC2 dashboard, click the orange **Launch instance** button
+3. Under **Name and tags**:
+   - In the **Name** field, type: `flask-cicd-demo-server`
+4. Under **Application and OS Images (Amazon Machine Image)**:
+   - Click the **Ubuntu** tile
+   - In the dropdown below it, leave the default Ubuntu LTS version selected
+   - Confirm it says **Free tier eligible** somewhere near it
+5. Under **Instance type**:
+   - Select **t3.micro** from the dropdown (confirm "Free tier eligible" label next to it)
+6. Under **Key pair (login)**:
+   - Click **Create new key pair**
+   - Key pair name: `flask-cicd-demo-key`
+   - Key pair type: RSA
+   - Private key file format: `.pem` (Mac/Linux) or `.ppk` (if you'll use PuTTY on Windows)
+   - Click **Create key pair** — this downloads a file. Save it somewhere safe; you can't download it again
+7. Under **Network settings**, click **Edit**:
+   - **VPC**: leave default
+   - **Subnet**: leave default (no preference)
+   - **Auto-assign public IP**: **Enable**
+   - **Firewall (security groups)**: select **Create security group**
+   - Security group name: `flask-cicd-demo-sg`
+   - It will show one default rule (SSH, port 22, source "My IP" or "Anywhere") — leave SSH as is, or set source to **My IP** for better security
+   - Click **Add security group rule**:
+     - Type: **Custom TCP**
+     - Port range: `8000`
+     - Source type: **Anywhere** (0.0.0.0/0)
+     - Description (optional): `Flask app access`
+8. Under **Configure storage**: leave the default (8 GiB gp3 is fine)
+9. Scroll down, review the **Summary** panel on the right
+10. Click the orange **Launch instance** button
+11. Click **View all instances** to go back to the instance list
+12. Wait until the **Instance state** column shows **Running** and **Status check** shows **2/2 checks passed** (takes 1-2 minutes)
+
+---
+
+## STEP 2 — Create the IAM role for SSM
+
+1. In the AWS Console search bar, type **IAM** and click it
+2. In the left sidebar, click **Roles**
+3. Click the orange **Create role** button
+4. Under **Trusted entity type**, select **AWS service** (should be selected by default)
+5. Under **Use case**, select **EC2** from the dropdown, then click **EC2** radio option that appears below it
+6. Click **Next**
+7. In the **Permissions policies** search box, type: `AmazonSSMManagedInstanceCore`
+8. Check the checkbox next to that policy
+9. Click **Next**
+10. **Role name**: type `EC2-SSM-Instance-Role`
+11. Scroll down, review, click **Create role**
+
+### Attach the role to your EC2 instance
+1. Go back to **EC2** → **Instances**
 AWS Console — Exact Click-by-Click Steps
 This is the pure "where do I click" guide — no code here (that's in CICD_COMPLETE_WALKTHROUGH.md and the flask-cicd-demo/ files). Follow this in order, in the AWS Console, after you've already pushed flask-cicd-demo to GitHub.
 
@@ -218,3 +283,4 @@ Within a few seconds to a couple minutes, you should see it automatically start 
 Watch Source → Build → Deploy all turn green again
 Refresh http://<public-ip>:8000 in your browser — it should show your updated text
 That confirms the full CI/CD loop: push code → pipeline detects it → builds → deploys → live app updates, with zero manual steps after the initial setup.
+
